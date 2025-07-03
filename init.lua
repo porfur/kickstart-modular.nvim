@@ -94,10 +94,10 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = false
 
 -- [[ Setting options ]]
-require 'options'
+-- require 'options'
 
 -- [[ Basic Keymaps ]]
-require 'keymaps'
+-- require 'keymaps'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
@@ -107,3 +107,8 @@ require 'lazy-plugins'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- NOTE: OP config
+require 'custom.options'
+require 'custom.keymaps'
+require 'custom.commands'
