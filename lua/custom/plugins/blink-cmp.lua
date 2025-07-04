@@ -41,6 +41,21 @@ return {
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
     opts = {
+      cmdline = {
+        enabled = false,
+        keymap = { preset = 'inherit' },
+        completion = {
+          list = { selection = { preselect = false, auto_insert = true } },
+          menu = {
+            auto_show = true,
+            draw = {
+              columns = {
+                { 'label' },
+              },
+            },
+          },
+        },
+      },
       keymap = {
         -- 'default' (recommended) for mappings similar to built-in completions
         --   <c-y> to accept ([y]es) the completion.
@@ -68,7 +83,7 @@ return {
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
 
         ['<Tab>'] = { 'snippet_forward', 'select_next', 'fallback' },
-        ['<S-Tab>'] = { 'snippet_backward', 'select_prev' ,'fallback'},
+        ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
       },
 
       appearance = {
@@ -80,8 +95,17 @@ return {
       completion = {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        documentation = { auto_show = true, auto_show_delay_ms = 0, window = { border = 'rounded' } },
         list = { selection = { preselect = false, auto_insert = true } },
+        menu = {
+          border = 'rounded',
+          draw = {
+            columns = {
+              { 'label', 'label_description', gap = 1 },
+              { 'kind_icon', 'kind', 'source_name', gap = 1 },
+            },
+          },
+        },
       },
       sources = {
         default = { 'lsp', 'snippets', 'buffer', 'path', 'lazydev' },
@@ -102,7 +126,7 @@ return {
       fuzzy = { implementation = 'lua' },
 
       -- Shows a signature help window while you type arguments for a function
-      signature = { enabled = true },
+      signature = { enabled = true, window = { border = 'single' } },
     },
   },
 }

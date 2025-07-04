@@ -11,7 +11,9 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree right reveal<CR>', desc = 'neoTree right reveal', silent = true },
+    { '<leader>e', ':Neotree float toggle<CR>', desc = 'n[e]oTree right toggle', silent = true },
+    { '<leader>E', ':Neotree left toggle<CR>', desc = 'n[E]oTree toggle', silent = true },
   },
   opts = {
     filesystem = {
@@ -21,5 +23,15 @@ return {
         },
       },
     },
+        event_handlers = {
+          {
+            event = 'neo_tree_buffer_enter',
+            handler = function()
+              vim.cmd [[
+           setlocal relativenumber
+           ]]
+            end,
+          },
+        },
   },
 }
