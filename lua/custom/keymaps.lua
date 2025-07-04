@@ -73,10 +73,10 @@ key_set('n', 'yp', ':let @+=expand("%")<CR>', {desc= '[y]ank relative [p]ath to 
 -- switch to prev buffer then delete prev buffer [ bdelete# ]
 -- That way splits dont close
 -- TODO: Organize these And figure out what they do
-key_set('n', '<leader>bd', ':bprevious<bar>bdelete!<CR>', {desc= 'Delete Buffer (Discard Changes)'})
-key_set('n', '<leader>bD', ':bprevious<bar> %bdelete!<CR>', {desc= 'Delete All Buffer (Discard Changes)'})
-key_set('n', '<leader>bc', ':write<bar>bprevious<bar>bdelete#<CR>', {desc= 'Write & Delete Buffer'})
-key_set('n', '<leader>bC', ':wall<bar> %bdelete<CR>', {desc= 'Write & Delete Buffers'})
+key_set('n', '<leader>bd', ':bdelete!<CR>', {desc= 'Delete Buffer (Discard Changes)'})
+key_set('n', '<leader>bD', ':%bdelete!<CR>', {desc= 'Delete All Buffer (Discard Changes)'})
+key_set('n', '<leader>bc', ':write<bar>bdelete#<CR>', {desc= 'Write & Delete Buffer'})
+key_set('n', '<leader>bC', ':wall<bar>%bdelete<CR>', {desc= 'Write & Delete Buffers'})
 key_set('n', '<leader>bqq<CR>', ':qa!<CR>', {desc= 'Quit All Buffers'})
 
 -- Clear highlights
