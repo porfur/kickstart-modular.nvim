@@ -6,8 +6,11 @@ return {
   opts = {},
   config = function()
     -- Adds underline to context regardless of the colorscheme
+    vim.keymap.set('n', '<leader>cc',function ()
+         vim.cmd 'TSContext toggle'
     vim.cmd 'hi TreesitterContextBottom gui=underline guisp=White'
     vim.cmd 'hi TreesitterContextLineNumberBottom gui=underline guisp=Grey'
-    vim.keymap.set('n', '<leader>cc', ':TSContext toggle<CR>', { desc = 'TS [c]ontext toggle' })
+ 
+    end, { desc = 'TS [c]ontext toggle' })
   end,
 }

@@ -69,4 +69,10 @@ M.diagnostic_jump = function(count)
   end
 end
 
+M.toggle_virtual_text = function()
+  local current_virtual_text = vim.diagnostic.config().virtual_text
+  vim.diagnostic.config { virtual_text = not current_virtual_text }
+  print('Virtual text ' .. (current_virtual_text and 'disabled' or 'enabled'))
+end
+
 return M

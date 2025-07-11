@@ -4,6 +4,7 @@ local key_set = vim.keymap.set
 local toggle_wildignore = utils.toggle_wildignore
 local toggle_quickfix = utils.toggle_quickfix
 local toggle_locallist = utils.toggle_locallist
+local toggle_virtual_text = utils.toggle_virtual_text
 local diagnostic_jump = utils.diagnostic_jump
 local toggle_zoom = utils.toggle_zoom
 
@@ -126,6 +127,7 @@ key_set('n', '<C-q>', toggle_quickfix, { desc = 'Toggle Quickfix' })
 key_set('n', '<leader><Tab>q', toggle_quickfix, { desc = 'Toggle [q]uickfix' })
 key_set('n', '<leader><Tab>l', toggle_locallist, { desc = 'Toggle [l]ocal list' })
 key_set('n', '<leader><Tab>w', toggle_wildignore, { desc = 'Toggle [w]ildignore' })
+key_set('n','<leader><Tab>v', toggle_virtual_text,{desc= 'Toggle diagnostic [v]irtual text'})
 
 -- Diagnostic keymaps
 key_set('n', '<leader>d', vim.diagnostic.setloclist, { desc = 'Open [d]iagnostic local list' })
@@ -146,3 +148,4 @@ key_set('c', '<C-p>', '<up>', { desc = 'Previous command' })
 key_set('n', '<leader>fg', ':edit .gitignore<CR>', { desc = 'Open [f]ile .gitignore' })
 key_set('n', '<leader>fe', ':edit .env<CR>', { desc = 'Open [f]ile .env' })
 key_set('n', '<leader>fp', ':edit package.json<CR>', { desc = 'Open [f]ile package.json' })
+

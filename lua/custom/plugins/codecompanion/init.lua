@@ -7,6 +7,7 @@ return {
       "ravitemer/mcphub.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "https://github.com/j-hui/fidget.nvim"
     },
     init = function()
       require("codecompanion").setup({
@@ -25,7 +26,7 @@ return {
             adapter = "OP",
             keymaps = {
               send = {
-                modes = { n = "<CR>", i = "<C-s>" },
+                modes = { n = "<C-s>", i = "<C-s>" },
                 opts = {},
               },
               close = {
@@ -59,7 +60,10 @@ return {
           end,
         },
       })
-      vim.keymap.set("n", "<leader>\\", ":CodeCompanionChat Toggle<CR>", { desc = "Toggle CodeCompanionChat" })
+      require("custom.plugins.codecompanion.fidget-spinner"):init()
+      vim.keymap.set("n", "<leader>ii", ":CodeCompanionChat Toggle<CR>", { desc = "Toggle CodeCompanionChat" })
+      vim.keymap.set("n", "<leader>ic", ":CodeCompanion<CR>", { desc = "CodeCompanion Prompt" })
+      vim.keymap.set("n", "<leader>ia", ":CodeCompanionActions<CR>", { desc = "CodeCompanion Actions" })
     end,
   },
   {
